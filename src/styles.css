@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { color-scheme: light; }
+  html { scroll-behavior: smooth; }
+  body { @apply m-0 bg-paper font-sans text-ink antialiased; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  a, button { @apply outline-none; }
+  :focus-visible { @apply ring-2 ring-coral ring-offset-4 ring-offset-paper; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+  }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-[90rem] px-5 sm:px-8 lg:px-12; }
+  .eyebrow { @apply text-xs font-bold uppercase tracking-[.2em] text-lake; }
+  .button { @apply inline-flex min-h-12 items-center justify-center gap-2 bg-coral px-6 py-3 text-sm font-bold uppercase tracking-[.08em] text-white transition duration-200 hover:bg-ink; }
+  .button-outline { @apply inline-flex min-h-12 items-center justify-center border border-current px-6 py-3 text-sm font-bold uppercase tracking-[.08em] transition duration-200 hover:bg-white hover:text-ink; }
+  .nav-link { @apply relative flex min-h-11 items-center text-sm font-bold text-white/90 transition hover:text-white; }
+  .nav-link::after { content: ""; @apply absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-coral transition-transform duration-200; }
+  .nav-link:hover::after, .nav-link[aria-current="page"]::after { @apply scale-x-100; }
+  .prose-school { @apply max-w-3xl text-[1.05rem] leading-8 text-ink/80; }
+  .prose-school p { @apply mb-5; }
+  .prose-school ul { @apply mb-6 list-disc space-y-2 pl-6; }
+  .section-rule { @apply border-t border-ink/15; }
+  .reveal { opacity: 1; transform: none; }
+  .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
+  .js .reveal.is-visible { opacity: 1; transform: translateY(0); }
+  .menu-panel { @apply invisible fixed inset-0 z-40 translate-x-full bg-navy px-6 pb-8 pt-24 opacity-0 transition duration-200 lg:hidden; }
+  .menu-panel.is-open { @apply visible translate-x-0 opacity-100; }
+}
+

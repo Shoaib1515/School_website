@@ -1,0 +1,13 @@
+{
+  "name": "bisc-south-loop-redesign",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/styles.css -o ./dist/assets/styles.css --minify",
+    "build": "python tools/generate_site.py && npm run build:css",
+    "preview": "python -m http.server 4173 --directory dist"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
+
