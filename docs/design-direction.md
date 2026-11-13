@@ -15,5 +15,5 @@ These references informed hierarchy, pacing, and task clarity only; the composit
 ## Integration notes
 
 - Inquiry and application submissions remain on the official school service; the prototype never displays a fake success state.
-- Authentic images are loaded from the school's public media CDN, so local previews need an internet connection.
+- Authentic school images are stored in `assets/images/` and served locally from `/assets/images/`; no CDN is used at runtime.
 - The virtual tour, downloadable documents, calendars, and partner services remain external links where exposed by the source.

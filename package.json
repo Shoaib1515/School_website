@@ -8,6 +8,8 @@
   },
   "devDependencies": {
     "tailwindcss": "^3.4.17"
+  },
+  "dependencies": {
+    "motion": "^14.6.0"
   }
 }
-
